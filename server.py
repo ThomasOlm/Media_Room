@@ -3,6 +3,8 @@ import threading
 
 HEADER = 64
 PORT = 5050
+
+
 SERVER = socket.gethostbyname(socket.gethostname())
 ADDR = (SERVER, PORT)
 FORMAT = 'utf-8'
@@ -16,6 +18,7 @@ def handle_client(conn, addr):
 
     connected = True
     while connected:
+
         msg_length = conn.recv(HEADER).decode(FORMAT)
         if msg_length:
             msg_length = int(msg_length)

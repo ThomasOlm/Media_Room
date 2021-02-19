@@ -1,6 +1,5 @@
 import socket
 
-
 HEADER = 64
 PORT = 5050
 FORMAT = 'utf-8'
@@ -11,6 +10,8 @@ ADDR = (SERVER, PORT)
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 client.connect(ADDR)
 
+
+# to send requests
 def send(msg):
     message = msg.encode(FORMAT)
     msg_length = len(message)
@@ -19,5 +20,4 @@ def send(msg):
     client.send(send_length)
     client.send(message)
 
-send('HELLO')
-send(DISCONNECT_MESSAGE)
+main()
